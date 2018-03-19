@@ -1,19 +1,77 @@
 
 @charset "utf-8";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+html.lonnie-homepage {
+	&, body { min-height: 100%; }
 
-html {
-	background: #888;
-	color: white;
-}
+	font-size: 16px;
+	font-family: Raleway, sans-serif;
+	background: #222;
+	background: linear-gradient(
+		to bottom right,
+		#555,
+		#111
+	);
+	background-attachment: fixed;
+	color: #fff;
 
-main {
-	margin: 10% auto;
-	max-width: 640px;
-	text-align: center;
+	&, * {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+		$color: lightskyblue;
+		color: $color;
+		&:visited { color: desaturate($color, 10%); }
+		&:hover { color: darken($color, 5%); text-decoration: underline; }
+		&:active { color: darken($color, 10%); }
+	}
+
+	.slice {
+		font-size: 1em;
+		margin: 2em auto;
+		max-width: 640px;
+		text-align: center;
+	}
+
+	main {
+		padding: 2em 0;
+
+		h1, h2 {
+			font-size: 4em;
+			text-transform: uppercase;
+			font-weight: 900;
+			text-shadow: 2px 2px 1px rgba(0,0,0, 0.5);
+			line-height: 1em;
+
+			em {
+				opacity: 0.5;
+				display: block;
+				font-weight: normal;
+				font-size: 0.32em;
+			}
+		}
+
+		.dramatic-link {
+			margin: 1em auto;
+		}
+
+		.first {
+			margin: 4em auto;
+		}
+
+		.works {
+			list-style: none;
+			box-shadow: 2px 2px 12px rgba(0,0,0, 0.32);
+			li {
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
 }

@@ -3,7 +3,7 @@
 	"description": "website for lonnie ralfs",
 	"license": "ISC",
 	"private": true,
-	"version": "0.0.0-dev.0",
+	"version": "0.0.0",
 	"scripts": {
 		"prepare": "npm run build -s && npm test -s",
 		"clean": "rimraf dist && mkdirp dist",
