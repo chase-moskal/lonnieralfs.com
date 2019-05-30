@@ -7,13 +7,28 @@
 	box-sizing: border-box;
 }
 
-html, body {
-	background: #321;
+html {
+	font-size: 21px;
+	color: #d9b17b;
+	background: #222;
+	font-family: Signika, sans-serif;
+	text-shadow: 0.5px 1px 3px rgba(0,0,0, 0.3);
+}
+
+@keyframes colorize {
+	0% { color: #009bff; }
+	33% { color: #00caff; }
+	66% { color: #00ff60; }
+}
+
+h1, h2 {
+	color: #e96814;
 	color: white;
 }
 
 a {
-	color: inherit;
+	animation: colorize 180s infinite;
+	color: #009bff;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -22,27 +37,135 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
-body > section, header, footer {
-	width: 80%;
-	margin: 2em auto;
-	background: #432;
-}
+/* plate */
 
-.bio {
+.plate {
+	width: 80%;
 	display: flex;
 	flex-direction: row;
+	padding: 0 2em;
+	margin: auto;
+	margin-top: 2em;
 }
 
-.bio > figure {
-	background: rgba(0,0,0, 0.1);
+.plate > * {
+	flex: 1 1 auto;
+	width: 100%;
 }
 
-.bio > div {
-	padding: 0 1em;
+.plate > *:first-child {
+	flex: 1 0 auto;
+	width: 65%;
 }
+
+.sepia img {
+	filter: sepia(100%);
+}
+
+.plate > .imagery > div {
+	display: flex;
+}
+
+.plate > .imagery figure {
+	flex: 1;
+}
+
+.plate > .imagery figure img {
+	display: block;
+	width: 100%;
+}
+
+@media (min-width: 1600px) {
+	.plate {
+		width: 60%;
+	}
+}
+
+@media (min-width: 2000px) {
+	.plate {
+		width: 50%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.plate {
+		flex-direction: column;
+	}
+	.plate > *:first-child {
+		width: 100%;
+	}
+	.plate .content {
+		padding: 0;
+		margin-top: 1em;
+	}
+}
+
+@media (max-width: 750px) {
+	.plate {
+		width: 100%;
+	}
+}
+
+.slice {
+	width: 80%;
+	margin: auto;
+	background: #456 linear-gradient(to bottom, #567, #456);
+	border-top: 1px solid rgba(255,255,255, 0.2);
+	border-bottom: 1px solid rgba(0,0,0, 0.2);
+}
+
+.content {
+	padding: 2em;
+}
+
+.content * + h1,
+.content * + h2,
+.content * + h3,
+.content * + h4,
+.content * + h5,
+.content * + h6,
+.content * + p,
+.content * + ul,
+.content * + ol,
+.content * + li {
+	margin-top: 0.67em;
+}
+
+.content ul, .content ol {
+	padding-left: 1.25em;
+}
+
+/* site header */
+
+.header {
+	text-align: center;
+	/* background: #456 linear-gradient(to bottom, #456, #345); */
+}
+
+/* bio */
+
+.header {
+	text-align: center;
+}
+
+.header h1 {
+	font-size: 2em;
+}
+
+.header nav > a {
+	margin: 0;
+}
+
+.header nav > a + a::before {
+	content: "·";
+	display: inline-block;
+	margin: 0 0.1em;
+	margin-right: 0.3em;
+}
+
+/* hire lonnie */
 
 .hire-lonnie {
 	display: flex;
 	flex-direction: row;
 }
-
