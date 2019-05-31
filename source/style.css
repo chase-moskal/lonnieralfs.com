@@ -137,30 +137,35 @@ a:hover, a:focus {
 
 /* site header */
 
-.header {
-	text-align: center;
-	/* background: #456 linear-gradient(to bottom, #456, #345); */
-}
-
-/* bio */
-
-.header {
+lonnie-header {
 	text-align: center;
 }
 
-.header h1 {
+lonnie-header {
+	display: block;
+	min-height: 77px;
+}
+
+lonnie-header nav {
+	color: #777;
+}
+
+lonnie-header a[data-marked] {
+	animation: none;
+	color: #777;
+	cursor: default;
+}
+
+lonnie-header {
+	text-align: center;
+}
+
+lonnie-header h1 {
 	font-size: 2em;
 }
 
-.header nav > a {
+lonnie-header nav > a {
 	margin: 0;
-}
-
-.header nav > a + a::before {
-	content: "·";
-	display: inline-block;
-	margin: 0 0.1em;
-	margin-right: 0.3em;
 }
 
 /* hire lonnie */

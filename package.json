@@ -5,7 +5,7 @@
 	"description": "website for lonnie ralfs",
 	"license": "ISC",
 	"scripts": {
-		"prepare": "run-s clean && run-p importmap && run-s test && echo ✔ done build",
+		"prepare": "run-s clean && run-p images importmap && run-s test && echo ✔ done build",
 		"clean": "rimraf dist && mkdirp dist",
 		"importmap": "importly < importly.config > dist/importmap.json",
 		"images": "run-p images1 images2 images3",
@@ -17,7 +17,9 @@
 	},
 	"devDependencies": {
 		"importly": "0.0.0-dev.4",
+		"markdown-it": "^8.4.2",
 		"mkdirp": "^0.5.1",
+		"mustache": "^3.0.1",
 		"npm-run-all": "^4.1.5",
 		"request": "^2.88.0",
 		"rimraf": "^2.6.3",
