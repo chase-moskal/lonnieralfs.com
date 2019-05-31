@@ -9,7 +9,7 @@
 
 html {
 	font-size: 21px;
-	color: #d9b17b;
+	color: #989086;
 	background: #222;
 	font-family: Signika, sans-serif;
 	text-shadow: 0.5px 1px 3px rgba(0,0,0, 0.3);
@@ -59,7 +59,7 @@ a:hover, a:focus {
 }
 
 .sepia img {
-	filter: sepia(100%);
+	filter: sepia(60%);
 }
 
 .plate > .imagery > div {
@@ -152,7 +152,7 @@ lonnie-header nav {
 
 lonnie-header a[data-marked] {
 	animation: none;
-	color: #777;
+	color: #999;
 	cursor: default;
 }
 
