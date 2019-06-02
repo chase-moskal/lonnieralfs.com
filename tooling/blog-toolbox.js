@@ -6,12 +6,8 @@ const grayMatter = require("gray-matter")
 const blogPostFileNameRegex = /^(\d{4}-\d{2}-\d{2})[-=:](.*)\.md$/i
 
 const parseDate = date => {
-	const [rawYear, rawMonth, rawDay] = date.split("-")
-	return {
-		year: parseInt(rawYear),
-		month: parseInt(rawMonth),
-		day: parseInt(rawDay)
-	}
+	const [year, month, day] = date.split("-")
+	return new Date(year - 1, month, day)
 }
 
 async function readPosts(postsDir) {
@@ -23,10 +19,10 @@ async function readPosts(postsDir) {
 		.sort((postA, postB) => {
 			const dateA = parseDate(postA.date)
 			const dateB = parseDate(postB.date)
-			if (dateA.year > dateB.year && dateA.month > dateB.month && dateA.day > dateB.day)
-				return -1
-			else if (dateA.year === dateB.year && dateA.month === dateB.month && dateA.day === dateB.day)
+			if (dateA === dateB)
 				return 0
+			else if (dateA > dateB)
+				return -1
 			else
 				return 1
 		})

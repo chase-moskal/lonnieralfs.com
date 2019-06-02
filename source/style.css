@@ -78,6 +78,11 @@ a:hover, a:focus {
 	margin: auto;
 }
 
+.slice > figure > img {
+	width: 100%;
+	display: block;
+}
+
 @media (min-width: 1600px) {
 	.plate, .slice {
 		width: 60%;
@@ -130,6 +135,10 @@ a:hover, a:focus {
 	padding-left: 1.25em;
 }
 
+.content li > p {
+	margin-top: 0;
+}
+
 .plate .content {
 	padding-top: 0;
 }
@@ -170,8 +179,11 @@ lonnie-header nav > a {
 /* hire lonnie */
 
 .hire-lonnie {
-	display: flex;
-	flex-direction: row;
+	margin: 2em auto;
+}
+
+.hire-lonnie li > p > strong {
+	color: #d3cabf;
 }
 
 /*
