@@ -1,6 +1,6 @@
 
-/blog
-/dist
+# /blog
+# /dist
 /images-og
 /node_modules
 /npm-debug.log*
