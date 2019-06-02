@@ -139,6 +139,11 @@ a:hover, a:focus {
 	margin-top: 0;
 }
 
+.content .detail {
+	opacity: 0.8;
+	font-size: 0.9em;
+}
+
 .plate .content {
 	padding-top: 0;
 }
