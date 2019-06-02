@@ -1,7 +1,6 @@
 
 const fs = require("fs").promises
 const mustache = require("mustache")
-const MarkdownIt = require("markdown-it")
 const grayMatter = require("gray-matter")
 
 const blogPostFileNameRegex = /^(\d{4}-\d{2}-\d{2})[-=:](.*)\.md$/i
@@ -13,17 +12,17 @@ async function readPosts(postsDir) {
 	return posts.filter(post => !!post)
 }
 
-async function makeBlogIndex({blogIndexTemplate, posts, distDir}) {
+async function makeBlogIndex({blogIndexTemplate, posts, distDir, makePostPath}) {
 	const blogIndexHtml = `
 		<ol class="blog-index">
 			${posts.map(post => `
 				<li>
 					<p><strong>
-						<a href="${"/" + distDir + "/" + post.date + "-" + post.name}">
+						<a href="${makePostPath(distDir, post)}">
 							${post.title}
 						</a>
 					</strong></p>
-					<p>${post.date}</p>
+					<p class="date">${post.date}</p>
 					<p>${post.description}</p>
 				</li>
 			`).join("")}
@@ -32,7 +31,7 @@ async function makeBlogIndex({blogIndexTemplate, posts, distDir}) {
 	return mustache.render(blogIndexTemplate, {blogIndexHtml})
 }
 
-async function makeBlogPost({blogPostTemplate, post, md = new MarkdownIt()}) {
+async function makeBlogPost({blogPostTemplate, post, md}) {
 	const blogPostHtml = md.render(post.markdown)
 	return mustache.render(blogPostTemplate, {...post, blogPostHtml})
 }

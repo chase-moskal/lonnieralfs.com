@@ -6,10 +6,19 @@
 	"files.encoding": "utf8",
 
 	"files.exclude": {
-		"dist": false,
+		"*.log*": true,
 		"coverage": true,
-		"node_modules": true,
-		"*.log*": true
+		"node_modules": true
+	},
+
+	"search.exclude": {
+		"dist": true,
+		"blog": true
+	},
+
+	"[markdown]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true
 	},
 
 	"typescript.tsdk": "node_modules/typescript/lib/"

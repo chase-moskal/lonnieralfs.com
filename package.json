@@ -5,9 +5,10 @@
 	"description": "website for lonnie ralfs",
 	"license": "ISC",
 	"scripts": {
-		"prepare": "run-s clean && run-p images importmap && run-s test && echo ✔ done build",
-		"clean": "rimraf dist && mkdirp dist",
+		"prepare": "run-s clean && run-p blog images importmap && run-s test && echo ✔ done build",
+		"clean": "rimraf dist blog && mkdirp dist blog",
 		"importmap": "importly < importly.config > dist/importmap.json",
+		"blog": "node ./tooling/generate-blog.js",
 		"images": "run-p images1 images2 images3",
 		"images1": "jpegger --indir images --outdir dist/images/large --quality 90",
 		"images2": "jpegger --indir images --outdir dist/images/medium --size 2000 --quality 80",

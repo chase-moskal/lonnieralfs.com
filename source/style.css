@@ -15,6 +15,10 @@ html {
 	text-shadow: 0.5px 1px 3px rgba(0,0,0, 0.3);
 }
 
+body {
+	padding-bottom: 4em;
+}
+
 h1, h2 {
 	color: #e96814;
 	color: white;
@@ -22,11 +26,12 @@ h1, h2 {
 
 a {
 	color: #009bff;
-	text-decoration: none;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 a:hover, a:focus {
+	color: #27d3ff;
 	text-decoration: underline;
 }
 
@@ -68,14 +73,19 @@ a:hover, a:focus {
 	width: 100%;
 }
 
+.slice {
+	width: 90%;
+	margin: auto;
+}
+
 @media (min-width: 1600px) {
-	.plate {
+	.plate, .slice {
 		width: 60%;
 	}
 }
 
 @media (min-width: 2000px) {
-	.plate {
+	.plate, .slice {
 		width: 50%;
 	}
 }
@@ -94,20 +104,12 @@ a:hover, a:focus {
 }
 
 @media (max-width: 750px) {
-	.plate {
+	.plate, .slice {
 		width: 100%;
 	}
 }
 
-.slice {
-	width: 80%;
-	margin: auto;
-	background: #456 linear-gradient(to bottom, #567, #456);
-	border-top: 1px solid rgba(255,255,255, 0.2);
-	border-bottom: 1px solid rgba(0,0,0, 0.2);
-}
-
-.content {
+.padded, .content {
 	padding: 2em;
 }
 
@@ -144,7 +146,7 @@ lonnie-header nav {
 }
 
 lonnie-header a[data-marked] {
-	opacity: 0.8;
+	color: #27d3ff;
 	cursor: default;
 	text-decoration: underline;
 }
@@ -166,4 +168,22 @@ lonnie-header nav > a {
 .hire-lonnie {
 	display: flex;
 	flex-direction: row;
+}
+
+/*
+BLOG STUFF
+*/
+
+.blog-index ol {
+	list-style: none;
+}
+
+.blog-index li + li {
+	margin-top: 1em;
+}
+
+.date {
+	opacity: 0.7;
+	font-size: 0.8em;
+	font-style: italic;
 }
