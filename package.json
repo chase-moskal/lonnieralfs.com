@@ -13,6 +13,7 @@
 		"images1": "jpegger --indir images --outdir dist/images/large --quality 90",
 		"images2": "jpegger --indir images --outdir dist/images/medium --size 2000 --quality 80",
 		"images3": "jpegger --indir images --outdir dist/images/small --size 1200 --quality 80",
+		"images-og": "jpegger --indir images-og --outdir images --quality 90",
 		"test": "exit 0",
 		"start": "serve -n"
 	},
