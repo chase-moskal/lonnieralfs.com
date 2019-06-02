@@ -130,6 +130,10 @@ a:hover, a:focus {
 	padding-left: 1.25em;
 }
 
+.plate .content {
+	padding-top: 0;
+}
+
 /* site header */
 
 lonnie-header {
