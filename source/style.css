@@ -125,10 +125,12 @@ a:hover, a:focus {
 .content * + h4,
 .content * + h5,
 .content * + h6,
+.content * + img,
 .content * + p,
 .content * + ul,
 .content * + ol,
-.content * + li {
+.content * + li,
+.content * + figure {
 	margin-top: 0.67em;
 }
 
@@ -147,6 +149,23 @@ a:hover, a:focus {
 
 .plate .content {
 	padding-top: 0;
+}
+
+figure {
+	position: relative;
+}
+
+figure > figcaption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 0.5em;
+	background: rgba(0,0,0, 0.5);
+	color: white;
+	text-shadow: 0.5px 2px 1px rgba(0,0,0, 0.5);
+	text-align: center;
 }
 
 /* site header */
@@ -209,4 +228,9 @@ BLOG STUFF
 	opacity: 0.7;
 	font-size: 0.8em;
 	font-style: italic;
+}
+
+.blog-post img {
+	width: 100%;
+	display: block;
 }
