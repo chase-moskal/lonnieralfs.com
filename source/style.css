@@ -15,19 +15,12 @@ html {
 	text-shadow: 0.5px 1px 3px rgba(0,0,0, 0.3);
 }
 
-@keyframes colorize {
-	0% { color: #009bff; }
-	33% { color: #00caff; }
-	66% { color: #00ff60; }
-}
-
 h1, h2 {
 	color: #e96814;
 	color: white;
 }
 
 a {
-	animation: colorize 180s infinite;
 	color: #009bff;
 	text-decoration: none;
 	font-weight: bold;
@@ -151,9 +144,9 @@ lonnie-header nav {
 }
 
 lonnie-header a[data-marked] {
-	animation: none;
-	color: #999;
+	opacity: 0.8;
 	cursor: default;
+	text-decoration: underline;
 }
 
 lonnie-header {

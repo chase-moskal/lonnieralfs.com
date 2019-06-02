@@ -16,6 +16,7 @@
 		"start": "serve -n"
 	},
 	"devDependencies": {
+		"gray-matter": "^4.0.2",
 		"importly": "0.0.0-dev.4",
 		"markdown-it": "^8.4.2",
 		"mkdirp": "^0.5.1",
