@@ -204,8 +204,7 @@ lonnie-header nav > a {
 /* hire lonnie */
 
 .hire-lonnie {
-	margin: 2em;
-	max-width: 900px;
+	margin: 2em auto;
 }
 
 .hire-lonnie li > p > strong {
