@@ -130,8 +130,13 @@ a:hover, a:focus {
 .content * + ul,
 .content * + ol,
 .content * + li,
+.content * + carouse-carousel,
 .content * + figure {
 	margin-top: 0.67em;
+}
+
+carouse-carousel > figure {
+	margin-top: unset !important;
 }
 
 .content ul, .content ol {
