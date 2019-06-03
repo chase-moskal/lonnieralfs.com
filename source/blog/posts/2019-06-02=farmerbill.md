@@ -28,4 +28,4 @@ description: Working on the overalls
 
 Here's the progress for Farmer Bill!
 
-A game character I'm sculpting. I've been creating his clothing in Marvelous Designer, a program I recently picked up which is AWESOME for simulating clothes and wrinkles and stuff. I did some additional sculpting in ZBrush. 
+A game character I'm sculpting. I've been creating his clothing in Marvelous Designer, a program I recently picked up which is AWESOME for simulating clothes and wrinkles and stuff. I did some additional sculpting in ZBrush.

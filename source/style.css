@@ -19,6 +19,12 @@ body {
 	padding-bottom: 4em;
 }
 
+body::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 h1, h2 {
 	color: #e96814;
 	color: white;
