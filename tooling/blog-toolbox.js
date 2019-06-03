@@ -34,7 +34,7 @@ async function makeBlogIndex({blogIndexTemplate, posts, distDir, makePostPath}) 
 			${posts.map(post => `
 				<li>
 					<p><strong>
-						<a href="${makePostPath(distDir, post)}">
+						<a href="/${makePostPath(distDir, post)}">
 							${post.title}
 						</a>
 					</strong></p>

@@ -15,7 +15,7 @@ async function main({
 	mkdirp = mkdirpAsync,
 	writeFile = fs.writeFile,
 	md = new MarkdownIt({html: true, linkify: true}),
-	makePostPath = (distDir, post) => `${distDir}/${post.date}/${post.urlTitle}`
+	makePostPath = (distDir, post) => `${distDir}/${post.date}/${post.urlTitle}/`
 }) {
 	const posts = await readPosts(`${sourceDir}/posts`)
 	const blogPostTemplate = await fs.readFile(`${sourceDir}/blog-post.html`, "utf8")
