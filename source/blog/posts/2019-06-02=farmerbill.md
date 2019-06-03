@@ -5,7 +5,7 @@ description: Working on the overalls
 
 # Farmer Bill is wearing overalls
 
-<carouse-carousel arrows dots loop hidden style="float:left; width:50%;margin-right:1em;">
+<carouse-carousel class="floaty left" arrows dots loop hidden>
   <figure>
     <img src="/dist/images/medium/blog/2019-06-02=farmerbill/billrendered.jpg" alt=""/>
     <figcaption>
