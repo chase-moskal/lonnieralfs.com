@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "lonnieralfs.com",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "website for lonnie ralfs",
 	"license": "ISC",
 	"scripts": {
