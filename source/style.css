@@ -170,8 +170,8 @@ figure > model-viewer {
 	width: 100% !important;
 	height: 600px !important;
 	display: block;
-	background: #111 !important;
-	--poster-color: #111;
+	background: #333333 !important;
+	--poster-color: #333;
 	--progress-bar-color: rgba(255,255,255, 0.2);
 	text-shadow: none;
 }
