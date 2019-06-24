@@ -8,7 +8,10 @@
 	"files.exclude": {
 		"*.log*": true,
 		"coverage": true,
-		"node_modules": true
+		"node_modules": true,
+		"dist": true,
+		"blog": true,
+		"images-og": true
 	},
 
 	"search.exclude": {
