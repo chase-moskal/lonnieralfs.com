@@ -336,16 +336,18 @@ CATALOG STUFF
 
 .catalog-content {
 	position: relative;
-	background: #333;
 	z-index: 1;
 }
 
 .catalog-content > div {
-	transition: height 400ms linear;
-	height: 0;
 	overflow: hidden;
+	background: #333;
+	transition: all 400ms linear;
+	height: 0;
+	opacity: 0;
 }
 
 .catalog-content > div[animate-visible=true] {
 	height: 300px;
+	opacity: 1;
 }
