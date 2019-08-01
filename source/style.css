@@ -47,7 +47,6 @@ a:hover, a:focus {
 	width: 80%;
 	display: flex;
 	flex-direction: row;
-	padding: 0 2em;
 	margin: auto;
 	margin-top: 2em;
 }
@@ -274,4 +273,79 @@ BLOG STUFF
 		margin-right: 0;
 		margin-left: 0;
 	}
+}
+
+/*
+CATALOG STUFF
+*/
+
+.catalog-area {
+	width: 80%;
+	min-width: 600px;
+	margin: auto;
+	margin-top: 2em;
+	min-height: 40em;
+}
+
+.catalog-grid {
+	margin-top: 2em;
+}
+
+.catalog-links {
+	display: flex;
+	flex-direction: row;
+	margin-top: 1em;
+}
+
+.catalog-links a {
+	position: relative;
+	flex: 1 1 0;
+	margin-bottom: 0;
+	border: 1px solid transparent;
+	color: white;
+}
+
+.catalog-links a + a {
+	margin-left: 0.5em;
+}
+
+.catalog-links a[data-active] {
+	border: 1px solid white;
+	box-shadow: 0 0 24px rgba(255,255,255, 0.5);
+}
+
+.catalog-links img {
+	display: block;
+	width: 100%;
+}
+
+.catalog-links a > div:last-of-type {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.25em 0.1em;
+	text-align: center;
+	background: rgba(0,0,0, 0.5);
+}
+
+.catalog-links a:hover > div:last-of-type,
+.catalog-links a:focus > div:last-of-type {
+	background: rgba(0,0,0, 0.6);
+}
+
+.catalog-content {
+	position: relative;
+	background: #333;
+	z-index: 1;
+}
+
+.catalog-content > div {
+	transition: height 400ms linear;
+	height: 0;
+	overflow: hidden;
+}
+
+.catalog-content > div[animate-visible=true] {
+	height: 300px;
 }

@@ -44,6 +44,8 @@ export class LonnieHeader extends LitElement {
 						${this[_createNavLink]({name: "Portfolio", href: "/"})}
 							·
 						${this[_createNavLink]({name: "Blog", href: "/blog/"})}
+							·
+						${this[_createNavLink]({name: "Catalog", href: "/catalog"})}
 					</nav>
 				</div>
 				<div></div>

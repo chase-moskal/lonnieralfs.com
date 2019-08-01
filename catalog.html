@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Lonnie Ralfs – Catalog</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Signika:400,700,900"/>
+		<link rel="stylesheet" href="source/style.css"/>
+	</head>
+	<body>
+		<lonnie-header marked="catalog"></lonnie-header>
+
+		<section class="catalog-area">
+			<h1>Catalog of open source 3D assets</h1>
+			<p>I am a generous man</p>
+			<div class="catalog-grid">
+				<div class="catalog-links">
+					<a href="#handgun">
+						<div><img src="https://picsum.photos/600/600?1"/></div>
+						<div>handgun</div>
+					</a>
+					<a href="#alien">
+						<div><img src="https://picsum.photos/600/600?2"/></div>
+						<div>alien</div>
+					</a>
+					<a href="#aliendog">
+						<div><img src="https://picsum.photos/600/600?3"/></div>
+						<div>aliendog</div>
+					</a>
+					<a href="#bill">
+						<div><img src="https://picsum.photos/600/600?4"/></div>
+						<div>bill</div>
+					</a>
+				</div>
+				<div class="catalog-content">
+					<div hidden data-label="handgun">
+						handgun lol
+					</div>
+					<div hidden data-label="alien">
+						alien lol
+					</div>
+					<div hidden data-label="aliendog">
+						aliendog lol
+					</div>
+					<div hidden data-label="bill">
+						bill lol
+					</div>
+				</div>
+				<div class="catalog-links">
+					<a href="#aaa">
+						<div><img src="https://picsum.photos/600/600?5"/></div>
+						<div>aaa</div>
+					</a>
+					<a href="#bbb">
+						<div><img src="https://picsum.photos/600/600?6"/></div>
+						<div>bbb</div>
+					</a>
+					<a href="#ccc">
+						<div><img src="https://picsum.photos/600/600?7"/></div>
+						<div>ccc</div>
+					</a>
+					<a href="#ddd">
+						<div><img src="https://picsum.photos/600/600?8"/></div>
+						<div>ddd</div>
+					</a>
+				</div>
+				<div class="catalog-content">
+					<div hidden data-label="aaa">
+						aaa lol
+					</div>
+					<div hidden data-label="bbb">
+						bbb lol
+					</div>
+					<div hidden data-label="ccc">
+						ccc lol
+					</div>
+					<div hidden data-label="ddd">
+						ddd lol
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script type="importmap-shim" src="/dist/importmap.json"></script>
+		<script type="module-shim" src="/source/main.js"></script>
+		<script type="module-shim">
+			import {CatalogGrid} from "/source/catalog-grid.js"
+			const catalog = new CatalogGrid({
+				animTime: 400,
+				catalogElement: document.querySelector(".catalog-grid")
+			})
+		</script>
+		<script src="https://unpkg.com/es-module-shims@0.2.3/dist/es-module-shims.js"></script>
+	</body>
+</html>
