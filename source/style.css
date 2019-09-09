@@ -352,3 +352,48 @@ CATALOG STUFF
 	height: 300px;
 	opacity: 1;
 }
+
+.sweetcata {
+	display: flex;
+	height: 100%;
+}
+
+.sweetcata > * {
+	flex: 1 1 auto;
+}
+
+.sweetcata carouse-carousel {
+	width: 50%;
+}
+
+.sweetcata carouse-carousel figure {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.sweetcata carouse-carousel img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* .sweetcata > carouse-carousel {
+	flex: 0 0 auto;
+	height: 100%;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+.sweetcata > carouse-carousel img {
+	width: 100%;
+	height: 100%;
+} */
+
+/* .sweetcata > carouse-carousel img {
+	display: block;
+	height: 300px;
+	width: 533px;
+} */
