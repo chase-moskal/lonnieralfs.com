@@ -1,8 +1,6 @@
 
 import {LitElement, html, css} from "lit-element"
 
-const _createNavLink = Symbol("_createNavLink")
-
 export class LonnieHeader extends LitElement {
 
 	static get properties() {
@@ -20,9 +18,10 @@ export class LonnieHeader extends LitElement {
 		return this
 	}
 
-	[_createNavLink]({name, href}) {
+	_createNavLink({name, href, external}) {
+		const target = external ? "_blank" : "_self"
 		const marked = name.toLowerCase() === this.marked.toLowerCase()
-		return html`<a href=${href} ?data-marked=${marked}>${name}</a>`
+		return html`<a target=${target} href=${href} ?data-marked=${marked}>${name}</a>`
 	}
 
 	static get styles() {
@@ -37,18 +36,27 @@ export class LonnieHeader extends LitElement {
 
 	render() {
 		return html`
-			<header class="header plate">
-				<div>
-					<h1>Lonnie Ralfs</h1>
-					<nav>
-						${this[_createNavLink]({name: "Portfolio", href: "/"})}
-							·
-						${this[_createNavLink]({name: "Blog", href: "/blog/"})}
-							·
-						${this[_createNavLink]({name: "Catalog", href: "/catalog"})}
-					</nav>
-				</div>
-				<div></div>
+			<header>
+				<h1>Lonnie Ralfs</h1>
+				<nav>
+					${this._createNavLink({
+						name: "Portfolio",
+						href: "/"
+					})}
+					<!--
+						·
+					${this._createNavLink({
+						name: "Catalog",
+						href: "/catalog"
+					})}
+					-->
+						·
+					${this._createNavLink({
+						external: true,
+						name: "🔗 Twitch",
+						href: "https://twitch.tv/lonnieralfs",
+					})}
+				</nav>
 			</header>
 		`
 	}
