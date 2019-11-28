@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+#
+# Video conversions
+#  - requires ffmpeg, v2.8
+#  - requires bash, v4
+#
+
+sourcedir=source
+sourceext=.mp4
+targetdir=dist
+
+videoheight=1080
+ffmpegloglevel=panic
+ffmpegmetadata=album_artist=""
+doneprefix="   done video   "
+
+echo " converting videos"
+
+shopt -s globstar
+
+for file in $sourcedir/**/*$sourceext; do
+	[ -f "$file" ] || break
+	echo "  convert video $file"
+	dirname=$(dirname $targetdir/${file#$sourcedir})
+	filename=$(basename ${file%.*})
+	outpath=$(realpath --relative-base=. $dirname/$filename)
+
+	# mp4 avc1 64002a
+	finaloutpath=$outpath.avc1-64002a.mp4
+	ffmpeg -i $file \
+		-y \
+		-loglevel $ffmpegloglevel \
+		-metadata $ffmpegmetadata \
+		-vcodec h264 \
+		-pix_fmt yuv420p \
+		-crf 28 \
+		-an \
+		-profile:v high \
+		-level:v 4.2 \
+		-vf scale=-1:$videoheight \
+		$finaloutpath
+	echo "$doneprefix$finaloutpath"
+
+	# mp4 avc1 42001e
+	finaloutpath=$outpath.avc1-42001e.mp4
+	ffmpeg -i $file \
+		-y \
+		-loglevel $ffmpegloglevel \
+		-metadata $ffmpegmetadata \
+		-vcodec h264 \
+		-pix_fmt yuv420p \
+		-crf 28 \
+		-an \
+		-profile:v baseline \
+		-level:v 3.0 \
+		-vf scale=-1:$videoheight \
+		$finaloutpath
+	echo "$doneprefix$finaloutpath"
+
+	# webm vp8
+	finaloutpath=$outpath.vp8.webm
+	ffmpeg -i $file \
+		-y \
+		-loglevel $ffmpegloglevel \
+		-metadata $ffmpegmetadata \
+		-vcodec vp8 \
+		-crf 28 \
+		-an \
+		-vf scale=-1:$videoheight \
+		$finaloutpath
+	echo "$doneprefix$finaloutpath"
+
+	# ogg video theora
+	finaloutpath=$outpath.theora.ogv
+	ffmpeg -i "$file" \
+		-y \
+		-loglevel $ffmpegloglevel \
+		-metadata $ffmpegmetadata \
+		-vcodec libtheora \
+		-q:v 4 \
+		-an \
+		-vf scale=-1:$videoheight \
+		$finaloutpath
+	echo "$doneprefix$finaloutpath"
+
+done
+
+echo " done videos"

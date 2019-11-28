@@ -89,6 +89,10 @@ a:hover, a:focus {
 	width: 100%;
 }
 
+.side-by-side video {
+	width: 100%;
+}
+
 .content * + h1,
 .content * + h2,
 .content * + h3,
@@ -381,3 +385,110 @@ CATALOG STUFF
 	height: 300px;
 	width: 533px;
 } */
+
+/*
+** TESTIMONIALS
+*/
+
+.testimonials ul {
+	list-style: none;
+	padding: 0.5em;
+	background: #3f454c;
+	color: white;
+}
+
+.testimonials li {
+	display: flex;
+	flex-direction: row;
+}
+
+.testimonials li > * {
+	padding: 1em;
+	flex: 1 1 auto;
+}
+
+.testimonials li > * > * + * {
+	margin-top: 1em;
+}
+
+.testimonials li > cite {
+	order: -1;
+	font-size: 1.2em;
+	width: 12em;
+	flex: 1 0 auto;
+	font-style: normal;
+	background: linear-gradient(
+		to bottom right,
+		rgb(168, 189, 213),
+		rgb(109, 125, 142)
+	);
+	color: #2c333b;
+}
+
+.testimonials li > cite strong {
+	font-size: 1.4em;
+}
+
+.testimonials a {
+	color: #004792;
+}
+
+@media (max-width: 777px) {
+	.testimonials li {
+		flex-direction: column;
+		order: 1;
+	}
+	.testimonials li > cite {
+		width: 100%;
+	}
+}
+
+/*
+** RESUME
+*/
+
+.resume {
+	list-style: none;
+	padding: 0 !important;
+	margin-top: 1em;
+}
+
+.resume > li {
+	padding: 0.5em;
+	display: flex;
+}
+
+.resume > li + li {
+	margin-top: 0.5em;
+}
+
+.resume > li > div {
+	flex: 0 1 auto;
+}
+
+.resume > li > div:nth-of-type(1) {
+	font-weight: bold;
+	width: 4em;
+	flex-shrink: 0;
+}
+
+.resume {
+	margin: 2em auto !important;
+}
+
+.resume > li {
+	border-left: 3px solid #44ff86;
+	background: linear-gradient(
+		to right,
+		rgba(68, 255, 134, 0.1),
+		rgba(255,255,255, 0)
+	 )
+}
+
+.resume > li > div:nth-of-type(1) {
+	color: #44ff86;
+}
+
+.resume > li > div:nth-of-type(2) {
+	color: #87b798;
+}
